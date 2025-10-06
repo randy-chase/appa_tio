@@ -1,0 +1,56 @@
+reconstruction_path: ???
+output_file: reconstruction_distribution.pdf
+
+surface_variables:
+  - name: 2m_temperature
+    bin_range: [-10, 10]
+  - name: 10m_u_component_of_wind
+    bin_range: [-10, 10]
+  - name: 10m_v_component_of_wind
+    bin_range: [-10, 10]
+  - name: mean_sea_level_pressure
+    bin_range: [-7, 7]
+    unit: "hPa"  # Overrides default unit
+  - name: total_precipitation
+    bin_range: [-4, 4]
+    unit: "mm"
+  - name: sea_surface_temperature
+    bin_range: [-20, 20]
+
+atmosphere_variables:
+  - name: temperature
+    bin_range: [-10, 10]
+  - name: u_component_of_wind
+    bin_range: [-10, 10]
+  - name: v_component_of_wind
+    bin_range: [-10, 10]
+  - name: geopotential
+    bin_range: [-600, 600]
+    unit: "$m^2/s^2$"
+  - name: specific_humidity
+    bin_range: [-5, 5]
+    unit: "g/kg"
+
+level_colors:
+  1000: "#D60001"
+  925: "#FF3B01"
+  850: "#FF8600"
+  700: "#FFCC02"
+  600: "#DBFF1D"
+  500: "#9AFF5D"
+  400: "#5DFF9A"
+  300: "#1BFFDB"
+  250: "#00BAFF"
+  200: "#006DFF"
+  150: "#001DFF"
+  100: "#0001D6"
+  50: "#000080"
+
+num_bins: 200
+
+figure_dpi: 900
+font_sizes:
+  tick_labels: 8
+  axis_labels: 9
+  variable_names: 6
+  level_legend: 7.5

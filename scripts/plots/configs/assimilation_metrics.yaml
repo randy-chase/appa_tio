@@ -1,0 +1,83 @@
+output_path: assimilation_metrics.pdf
+
+# Path that contains the "...h" folders.
+reanalysis:
+  path: ???
+  eval_id: default
+  window_sizes: "1,2,4,8,16,36,48,72"
+# Each path should end with the "...h".
+forecasting:
+  observational:
+    path: ???
+    eval_id: default
+  full:
+    path: ???
+    eval_id: default
+  prior:
+    path: ???
+    eval_id: default
+  persistence:
+    path: ???
+    eval_id: default
+
+channels:
+  # Main text
+  - name: 2m_temperature
+    display_name: "2m temperature $[K]$"
+  - name: 10m_u_component_of_wind
+    display_name: "10m U wind\ncomponent $[m/s]$"
+  - name: 10m_v_component_of_wind
+    display_name: "10m V wind\ncomponent $[m/s]$"
+  - name: temperature
+    level: 850
+    display_name: "Temperature\n(850hPa) $[K]$"
+
+  # Appendix
+  - name: total_precipitation
+    display_name: "Total precipitation $[mm]$"
+    multiplier: 1000
+  - name: geopotential
+    level: 500
+    display_name: "Geopotential\n(500hPa) $[m^2/s^2]$"
+  - name: sea_surface_temperature
+    display_name: "Sea surface\ntemperature $[K]$"
+  - name: specific_humidity
+    level: 700
+    display_name: "Specific humidity\n(700hPa) $[g/kg]$"
+    multiplier: 1000
+  - name: mean_sea_level_pressure
+    display_name: "Mean sea\nlevel pressure $[Pa]$"
+
+colors:
+  aao_obs: "tab:blue"
+  aao_full: "tab:orange"
+  ar_full: "red"
+  prior: "black"
+  persistence: "darkgray"
+  ifs: "gold"
+  graphdop: "green"
+
+metrics:  # skill, crps, spread, spread_skill_ratio
+  - skill
+  - crps
+
+line_width: 1.5
+font_sizes:
+  task_titles: 12
+  metric_titles: 15
+  tick_labels: 8
+
+reanalysis_filtering_ticks_show_days: true  # If true, shows ticks in days.
+reanalysis_filtering_ticks:
+  - 0
+  - 24
+  - 48
+  - 72
+
+forecasting_xlim: [-4, 26]  # x-axis limits for forecasting plots, in hours.
+forecast_ticks_show_days: false  # If true, shows ticks in days.
+forecasting_ticks:
+  - 0
+  - 24
+  - 48
+  - 72

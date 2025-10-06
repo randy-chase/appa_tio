@@ -1,0 +1,46 @@
+output_path: ???
+
+# Path to the folder containing power_spectra.zarr
+path_latent: ???
+path_samples: ???
+path_gt: ???
+
+levels:
+  - 1000
+  - 700
+  - 500
+  - 300
+  - 100
+  - 50
+
+atmospheric_variables: era5
+
+quantile: Q50
+
+plot_params:
+  xscale: log
+  yscale: log
+  ylim: [1e-15, 1e3]
+
+grid_params:
+  which: both
+  linestyle: "-"
+  linewidth: 0.5
+  alpha: 0.25
+
+labels_params:
+  fontsize: 9
+
+ae_style:
+  color: black
+  linestyle: dashed
+  linewidth: 1
+
+samples_style:
+  color: grey
+  linestyle: dotted
+  linewidth: 1
+
+error_style:
+  capsize: 2
+  markersize: 2

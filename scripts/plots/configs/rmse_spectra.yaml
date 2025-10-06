@@ -1,0 +1,101 @@
+reconstruction_path: ???
+
+# Path of the folders containing the "statistics.zarr" for power spectra
+path_latent: ???
+path_samples: ???
+path_gt: ???
+
+output_file: rmse_spectra.pdf
+
+# RMSE config
+surface_variables:
+  - 2m_temperature
+  - 10m_u_component_of_wind
+  - 10m_v_component_of_wind
+  - mean_sea_level_pressure
+  - sea_surface_temperature
+
+atmospheric_variables:
+  - temperature
+  - u_component_of_wind
+  - v_component_of_wind
+  - geopotential
+  - specific_humidity
+
+ticks:
+  levels:
+    - 1000
+    - 800
+    - 600
+    - 400
+    - 200
+    - 50
+  error:
+    - 0
+    - 0.05
+    - 0.1
+    - 0.15
+    - 0.2
+  error_min: -0.02
+  error_max: 0.22
+
+styles:
+  mean_sea_level_pressure:
+    color: cyan
+    marker: "+"
+  sea_surface_temperature:
+    color: orange
+    marker: "x"
+  temperature:
+    color: red
+    marker: "*"
+  geopotential:
+    color: magenta
+    linestyle: ":"
+  u_component_of_wind:
+    color: blue
+    linestyle: "-."
+    marker: "o"
+  v_component_of_wind:
+    color: green
+    linestyle: "-."
+    marker: "s"
+  specific_humidity:
+    color: y
+    linestyle: "-."
+
+font_sizes:
+  axis_label: 11
+  legend: 10
+  ticks: 11
+
+power_spectra:
+  quantile: Q50
+
+  plot_params:
+    xscale: log
+    yscale: log
+    ylim: [1e-15, 1e3]
+
+  grid_params:
+    which: both
+    linestyle: "-"
+    linewidth: 0.5
+    alpha: 0.25
+
+  labels_params:
+    fontsize: 11
+
+  ae_style:
+    color: black
+    linestyle: dashed
+    linewidth: 1
+
+  samples_style:
+    color: grey
+    linestyle: dotted
+    linewidth: 1
+
+  error_style:
+    capsize: 2
+    markersize: 2
