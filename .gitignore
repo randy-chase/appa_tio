@@ -20,7 +20,7 @@ local/
 *.sh
 *.png
 cluster/*
-notebooks/*
+# notebooks/*
 
 # idea
 .idea*
